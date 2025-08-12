@@ -1,0 +1,40 @@
+package app;
+
+public class mercado {
+
+	public static void main(String[] args) {
+		// declaracao de variaveis
+		
+		// declaracao do produto
+		String nomeProduto = "Arroz Camil 5kg";
+		double precoProduto = 27.90;
+		int estoqueproduto = 120;
+		
+		// dados do cliente
+		String nomecliente = "Ana Carolina";
+		int idadecliente = 35;
+		char sexoCliente = 'F';
+		
+		// dados do caixa
+		int numeroCaixa = 3;
+		boolean caixaAberto = true;
+		
+		// Exibir as informacoes
+		System.out.println("===SISTEMA DE MERCADO===");
+		System.out.println("Produto:" + nomeProduto);
+		System.out.println("Preço: " + precoProduto);
+		System.out.println("Estoque: " + estoqueproduto + " unidades");
+		System.out.println("");
+		System.out.println("===CLIENTE===");
+		System.out.println("Nome: " + nomecliente);
+		System.out.println("Nome e idade: " + nomecliente + "(" + idadecliente  + " anos)" );
+		System.out.println("Gênero: " + sexoCliente);
+		System.out.println("");
+		System.out.println("===Caixa===");
+		System.out.println("Caixa nº: " + numeroCaixa + " Aberto? " + caixaAberto) ;
+		
+	
+		
+	}
+
+}
