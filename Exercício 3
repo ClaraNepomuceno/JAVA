@@ -1,0 +1,96 @@
+package app;
+
+import java.util.Scanner;
+
+public class gestaoestoque {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		// TODO Auto-generated method stub
+		// Gestao de estoque
+
+		String nomedoProduto;
+		int quantidadeDisponivel;
+		float preco;
+		int codigoBarras;
+		int menu;
+		String produtoCliente;
+		boolean executando = true;
+
+		while (executando) {
+			System.out.println("Menu");
+			System.out.println("1 - Comprar Item");
+			System.out.println("2 - Atualizar estoque ");
+			System.out.println("3 - Sair ");
+			System.out.println("Escolha: ");
+			menu = Integer.parseInt(scanner.nextLine());
+
+			if (menu == 1) {
+				System.out.println("Digite o nome do produto a ser comprado: ");
+				produtoCliente = scanner.nextLine();
+
+				System.out.println("Digite o preço do produto: ");
+				preco = Float.parseFloat(scanner.nextLine());
+
+				System.out.println("Digite o codigo de barras: ");
+				codigoBarras = Integer.parseInt(scanner.nextLine());
+
+				System.out.println("Produto comprado com sucesso!");
+				System.out.println("");
+				System.out.println("");
+				
+				System.out.println("======Histórico de Compra======");
+				System.out.println("Nome: " + produtoCliente);
+				System.out.printf("Preço: R$ %.2f\n", preco );
+				System.out.println("CD: " + codigoBarras);
+				System.out.println("");
+				System.out.println("");
+				
+				
+				
+				
+
+			}
+
+			else if (menu == 2) {
+				System.out.println("Digite o nome do produto2: ");
+				nomedoProduto = scanner.nextLine();
+
+				System.out.println("Digite o preço do produto:");
+				preco = Float.parseFloat(scanner.nextLine());
+
+				System.out.println("Digite o codigo de barras: ");
+				codigoBarras = Integer.parseInt(scanner.nextLine());
+
+				System.out.println("Quantidade disponível: ");
+				quantidadeDisponivel = Integer.parseInt(scanner.nextLine());
+			
+				System.out.println("Produto cadastrado com sucesso!!");
+				
+				
+				System.out.println("======Histórico de Cadastro======");
+				System.out.println("Nome: " + nomedoProduto);
+				System.out.printf("Preço: R$ %.2f\n", preco );
+				System.out.println("CD: " + codigoBarras);
+				System.out.println("Quantidade disponível: " + quantidadeDisponivel);
+				System.out.println("");
+				System.out.println("");
+				
+			}
+			
+			else if (menu == 3 ) {
+				executando = false;
+				return;
+			}
+
+			else {
+				System.out.print("Digite um número valido!!");
+				
+
+			}
+		}
+		scanner.close();
+	}
+
+}
