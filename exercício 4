@@ -1,0 +1,81 @@
+package app;
+import java.util.Scanner;
+
+public class ModFinanceiro {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		// declaracao de variavel
+		String nome;
+		float precoCompra;
+		float precoVenda;
+		int quantidadeVendida;
+
+		
+		System.out.println("Nome do produto: ");
+		nome = scanner.nextLine(); 
+		
+		System.out.println("Preço da compra");
+		precoCompra =lerFloatPositivo(scanner);
+		
+		System.out.println("Preço de venda");
+		precoVenda = lerFloatPositivo(scanner);
+		
+		System.out.println("Quantidade vendida: ");
+		quantidadeVendida = lerIntPositivo(scanner);
+		
+		System.out.println("===Contas===");
+		
+		// declaracao variaveis para receita
+		
+		float receitaTotal = (precoVenda * quantidadeVendida);
+
+		float custoTotal = (precoCompra * quantidadeVendida);
+		float imposto = (0.10f * receitaTotal) ;
+		
+		System.out.println("Receita Total: " + (precoVenda * quantidadeVendida ) );
+		System.out.println("Custo total: " + (precoCompra * quantidadeVendida) );
+		System.out.println("lucro bruto: " + (receitaTotal - custoTotal) );
+		System.out.println("Imposto sobre a venda é de 10%: ");
+		System.out.println("Lucro líquido:" + (receitaTotal - custoTotal - imposto));
+		
+		scanner.close();
+		
+	}
+	private static float lerFloatPositivo (Scanner scanner) {
+		
+		while(true) {
+			try
+			{
+			float valor = Float.parseFloat(scanner.nextLine());
+					if (valor >=0) {
+						return valor;
+					}
+					System.out.println("Por favor, digite um valor positivo:");
+			}
+			catch (NumberFormatException e) {
+				System.out.println("Digite um preço válido!");
+			} 
+		}
+	}
+	
+	private static int lerIntPositivo (Scanner scanner) {
+		while(true) {
+			try {
+				int valor = Integer.parseInt(scanner.nextLine());
+				if(valor >=0) {
+					return valor;
+				}
+				System.out.println("Por favor, digite um valor positivo inteiro");
+			}
+			catch (NumberFormatException e ) {
+				System.out.println("Digite um valor válido!");
+			}
+			
+		}
+	}
+
+}
