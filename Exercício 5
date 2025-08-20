@@ -1,0 +1,93 @@
+package app;
+
+import java.util.Scanner;
+
+public class verificacaoDesconto {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		String nome;
+		int tipoCliente;
+		float valorCompra;
+		boolean rodando = true;
+
+		System.out.println("Digite seu nome:");
+		nome = scanner.nextLine();
+
+		while (rodando) {
+			System.out.println("");
+
+			System.out.println("Escolha uma das opções abaixo");
+			System.out.println("===Menu===");
+			System.out.println("1 - Cliente comum");
+			System.out.println("2 - Cliente Vip");
+			System.out.println("3 - Funcionário");
+			System.out.println("4 - saida");
+			System.out.println("Escolha: ");
+			tipoCliente = tipoMenu(scanner);
+
+			if (tipoCliente == 1) {
+				System.out.println("Olá, " + nome);
+				System.out.println("Qual o valor da sua compra?");
+				valorCompra = Float.parseFloat(scanner.nextLine());
+				System.out.println("Você não tem desconto! O valor total da sua compra é de R$" + valorCompra);
+
+			} else if (tipoCliente == 2) {
+				System.out.println("Cliente vip");
+				System.out.println("Olá, " + nome);
+				System.out.println("Qual o valor da sua compra?");
+				valorCompra = Float.parseFloat(scanner.nextLine());
+
+				// calculo desconto vip
+				double descontoVip = valorCompra * 0.10;
+				double descontoVipTotal = valorCompra - descontoVip;
+
+				System.out.println("Seu desconto é de R$" + descontoVip);
+				System.out.println("O total da sua compra é de R$" + descontoVipTotal);
+
+			} else if (tipoCliente == 3) {
+				System.out.println("Funcionário");
+				System.out.println("Olá, " + nome);
+				System.out.println("Qual o valor da sua compra?");
+				valorCompra = Float.parseFloat(scanner.nextLine());
+
+				// calculo desconto funcionario
+
+				double descontoFuncionario = valorCompra * 0.20;
+				double descontoFunTotal = valorCompra - descontoFuncionario;
+
+				System.out.println("Seu desconto é de R$" + descontoFuncionario);
+				System.out.println("O total da sua compra é de R$" + descontoFunTotal);
+
+			} else if (tipoCliente == 4) {
+				System.out.println("Saindo do sistema");
+				return;
+			} else {
+				System.out.println("Digite um número válido");
+
+			}
+
+		}
+
+		scanner.close();
+	}
+
+	// evitar que usuarios digitem letras ou numeros negativos
+	private static int tipoMenu(Scanner scanner) {
+		while (true) {
+			try {
+				int valor = Integer.parseInt(scanner.nextLine());
+				if (valor >= 1 && valor <= 4) {
+					return valor;
+				} else {
+					System.out.println("Por favor, digite um valor positivo inteiro");
+				}
+			} catch (NumberFormatException e) {
+				System.out.println("Digite um valor válido!");
+			}
+
+		}
+	}
+
+}
