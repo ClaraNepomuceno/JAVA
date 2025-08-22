@@ -1,0 +1,35 @@
+package minimarcket;
+
+import java.util.Scanner;
+
+public class calcFrete {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner scanner = new Scanner(System.in);
+		double km = 12.50;
+		double kmRodado;
+
+		System.out.println("Quantos km pecorridos(min 1km, apenas números)?");
+		kmRodado = lerkmrodado(scanner);
+		System.out.printf("Seu frete é de R$%.2f%n", (kmRodado * km));
+	}
+
+	private static double lerkmrodado(Scanner scanner) {
+		while (true) {
+			try {
+				double valor = Double.parseDouble(scanner.nextLine());
+				if (valor >= 1) {
+					return valor;
+				} else {
+					System.out.println("digite um valor maior ou igua a 1");
+				}
+
+			} catch (NumberFormatException e) {
+				System.out.println("Digite um valor maior ou igua a 1");
+			}
+		}
+	}
+
+}
