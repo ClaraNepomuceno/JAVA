@@ -62,7 +62,7 @@ public class verificacaoDesconto {
 
 			} else if (tipoCliente == 4) {
 				System.out.println("Saindo do sistema");
-				return;
+				rodando = false;
 			} else {
 				System.out.println("Digite um número válido");
 
