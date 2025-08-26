@@ -1,0 +1,72 @@
+package app;
+
+import java.util.Scanner;
+
+public class LanchoneteBomgosto {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+
+		int menu; 
+		System.out.println("Lanchonete Bom Gosto");
+		System.out.println("Seja bem-vindo");
+		System.out.println("1 - Comidas");
+		System.out.println("2 - Bebidas");
+		System.out.println("3 - Sobremesas");
+		menu = scanner.nextInt();
+		
+		switch(menu) 
+		{
+		
+		case 1;
+		break;
+		
+		}
+		
+		
+		
+		
+		
+		public static void exibir() {
+		Comidas comidas1 = new Comidas();
+		comidas1.crepe1 = " 1 - Crepe de frango com catupiry";
+		comidas1.crepe2 = " 2 - Crepe de presunto com queijo";
+		comidas1.crepe3 = "3 - Crepe de Strogonoff";
+		comidas1.hamburguer1 = "4 - Hamburguer de frango ";
+		comidas1.hamburguer2 = "5 - Hamburguer de cheddar";
+		comidas1.hamburguer3 = "6 - Haburguer com carde bovina";
+		comidas1.cachorroquente1 = "7 - Cachorro quente no molho ";
+		comidas1.cachorroquente1 = "8 - Cachorro quente na chapa ";
+
+	
+		
+		
+		Bebidas bebidas = new Bebidas();
+		bebidas.refri1 = "Refrigerante de guaraná";
+		bebidas.refri2 = "Refrigerante de uva";
+		bebidas.refri3 = "Refrigerante de laranja";
+		bebidas.suco1 = "Suco de uva";
+		bebidas.suco2 = "Suco de maracuja";
+		bebidas.suco3= "Suco de manga";
+		
+		Sobremesa sobremesa = new  Sobremesa();
+		sobremesa. bolo = "Bolo de morango";
+		sobremesa. bolo = "Bolo de Chocolate";
+		sobremesa. bolo = "Bolo de Laranja";
+		sobremesa. musse1 = "Musse de limão";
+		sobremesa. musse2 = "Musse de Maracujá";
+		sobremesa. musse3 = "Musse de chocolate";
+		sobremesa. Sorvete1 = "Sorvete chiclete com banana";
+		sobremesa. sorvete2 = "Sorvete Morango";
+		
+		}
+		
+
+
+		
+
+	}
+
+
+    }
